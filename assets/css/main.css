@@ -28,6 +28,13 @@ img {
 figure {
   margin: 0; }
 
+p {
+  font-size: 15px; }
+
+h1 {
+  font-size: 37px;
+  font-family: "Block Berthold", sans-serif; }
+
 header {
   width: 100%;
   max-width: 100%;
@@ -234,11 +241,31 @@ header {
   border-bottom: 8px solid #000; }
   .sidebar-left li {
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    border-right: 8px solid #000; }
+    .sidebar-left li:nth-child(3n) {
+      border-right: none; }
+
+.sidebar-right {
+  border-top: 8px solid #000;
+  color: #FF0000;
+  font-size: 18px;
+  font-weight: bold;
+  background: #FF0000; }
+  .sidebar-right li {
+    background: #FFF;
+    border-bottom: 8px solid #000; }
 
 @media only screen and (min-width: 64em) {
   .sidebar-left {
-    border-right: 8px solid #000; } }
+    border-right: 8px solid #000;
+    background: #FF0000; }
+    .sidebar-left li {
+      border-right: none;
+      border-bottom: 8px solid #000; }
+  .sidebar-right {
+    border-left: 8px solid #000;
+    border-top: 0; } }
 
 .show-for-small-only {
   display: block; }
@@ -257,4 +284,6 @@ main, main.row {
   .show-for-small-only {
     display: none !important; }
   .hide-for-small-only {
-    display: block !important; } }
+    display: block !important; }
+  main, main.row {
+    padding-top: 95px; } }

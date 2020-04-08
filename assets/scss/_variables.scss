@@ -15,5 +15,12 @@ $fontTitle: "Block Berthold", sans-serif;
 
 // FontSize
 $sizeMenu: 25px;
-$sizeText: 18px;
+$sizeSubmenu: 18px;
+$sizeText: 15px;
+$sizeH1: 37px; 
+
+@mixin H1{
+	font-size: $sizeH1;
+	font-family: $fontTitle;
+} 
 

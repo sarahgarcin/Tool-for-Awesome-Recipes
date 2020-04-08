@@ -92,7 +92,7 @@ header{
 		overflow: hidden; 
 		padding: 0;
 		transition: max-height 0.3s linear, padding 0.2s linear 0.2s, border-bottom-width 0.2s linear;
-		li{font-size: $sizeText;}
+		li{font-size: $sizeSubmenu;}
 		&.active{
 			padding: $marginSmall;
 			max-height: 200px; 

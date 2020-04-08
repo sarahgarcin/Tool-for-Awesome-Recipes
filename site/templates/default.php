@@ -7,11 +7,7 @@
 				<?php if($page->images()):?>
 					<?php foreach($page->images() as $image):?>
 						<li class="col-xs-4 col-md-12">
-							<?= $image->thumb([
-						      'width'   => 300,
-						      'height'  => 200,
-						      'quality' => 80
-						    ])->html();?>
+							<?= $image->crop(300, 200, 'center');?>
 						</li>
 					<?php endforeach?>
 				<?php endif;?>
@@ -21,13 +17,15 @@
 			<?= $page->text()->kt()?>
 		</div>
 		<div class="sidebar-right col-xs-12 col-md-3">
+			<ul class="row">
 			<?php if($page->notes()):?>
 				<?php foreach($page->notes()->toStructure() as $note):?>
-					<div class="note-wrapper">
+					<li class="note-wrapper col-xs-12">
 						<?= $note->note()->kt()?>
-					</div>
+					</li>
 				<?php endforeach?>
 			<?php endif;?>
+			</ul>
 		</div>
 		
 	</main>
