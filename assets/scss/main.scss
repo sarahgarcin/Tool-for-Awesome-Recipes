@@ -50,6 +50,10 @@ main, main.row{
   margin: 0px;
 }
 
+.rouge{
+  color: $red; 
+}
+
 // -------------- DESKTOP GENERAL --------------
 @media only screen and (min-width: 64em){
   body{

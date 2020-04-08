@@ -278,6 +278,9 @@ main, main.row {
   border: 8px solid #000;
   margin: 0px; }
 
+.rouge {
+  color: #FF0000; }
+
 @media only screen and (min-width: 64em) {
   body {
     margin: 0 50px; }
