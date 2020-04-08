@@ -1,0 +1,165 @@
+// -------------- MOBILE-FIRST HEADER --------------
+
+header{
+	width: 100%;
+	max-width: 100%;
+	position: fixed;
+	left:0;
+	top:0; 
+	background: #FFF;
+	z-index: 10000; 
+	&.row{margin:0;}
+	a{text-decoration:none;}
+	.mobile-menu{
+		display:flex;
+		justify-content: space-between;
+		align-items:center;
+		width: 100%;
+	}
+	.mobile-menu_logo{
+		padding: $marginSmall $marginNormal 0 $marginNormal;
+	}
+	.mobile-menu_btn{
+		display:block;
+		position:relative;
+		margin:0px 50px;
+		cursor:pointer;
+		height:24px;
+		span {
+		  display:block;
+		  background:$red;
+		  height:4px;
+		  width:35px;
+		  position:absolute;
+		  transition:all 0.5s ease;
+		}
+		span:nth-child(1){top:0px;}
+		span:nth-child(2){top:10px;}
+		span:nth-child(3){top:20px;}
+
+		.transparent {opacity:0;}
+		.rotate-top{transform:rotatez(45deg);-webkit-transform-origin:0%;left:2px}
+		.rotate-bottom{transform:rotatez(-45deg);-webkit-transform-origin: 15%;}
+	}
+	.nav{
+		max-height:0; 
+		overflow:hidden;
+		// min-height:100vh; 
+		background: #FFF;
+		margin:0;
+		padding-left: 5.5vw;
+		border-bottom: 8px solid #000; 
+		width: 100%;
+		transition: all 1s linear;
+		&.active{
+			max-height: 100vh; 
+			overflow: auto;
+		}
+	}
+	.main-nav{
+		margin-top: $marginNormal;
+		font-family: $fontTitle;
+		li{
+			padding-top: 2px; 
+			padding-bottom:2px;
+			cursor: pointer;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-size: $sizeMenu;
+			a{color: $red;}
+			&.active{
+				color: #000;
+				&::before{color: #000;}
+			}				
+		}
+	}
+	.main-nav_first-level{
+		& > li{
+			&:hover, &:hover > a{
+				color: #000;
+				&::before{color: #000;}
+			}
+			ul > li{
+				a{color: $red;}
+				&:hover, &:hover a{
+					color: #000;
+				}
+			}
+		}
+	}
+	.main-nav_submenu{ 
+		max-height:0;
+		overflow: hidden; 
+		padding: 0;
+		transition: max-height 0.3s linear, padding 0.2s linear 0.2s, border-bottom-width 0.2s linear;
+		li{font-size: $sizeText;}
+		&.active{
+			padding: $marginSmall;
+			max-height: 200px; 
+			transition: all 0.3s linear;
+		}
+		a.active{color:#000;}
+	}
+
+	.searchbar{
+		margin: $marginNormal 0px;
+		input{
+			border: none; 
+			border: 1px solid $red;
+			color: $red; 
+			background: #FFF; 
+		}
+	}
+
+}
+
+
+// -------------- DESKTOP HEADER --------------
+@media only screen and (min-width: 64em){
+	header{
+		border-bottom: 8px solid #000; 
+		position: fixed;
+		left:50px;
+		right:50px;
+		width: auto;
+		padding: $marginSmall 0px;
+		.nav{
+			display:flex; 
+			height:auto; 
+			min-height:auto;
+			max-height: none;
+			border-bottom: none;
+			padding-left: $marginBig;
+		}
+		.main-nav{
+			margin-top:0;
+		}
+		.main-nav_first-level{
+			column-count: 3;
+			-moz-column-count: 3;
+		}
+		.main-nav_submenu{
+			position: absolute;
+			top: calc(100% + 8px);
+			left:0; 
+			right:0;
+			padding: 0 $marginNormal;
+			display:flex;
+			justify-content: center;
+			background: #FFF; 
+			border-bottom: 0px solid #000;
+			border-left: 8px solid #000; 
+			border-right: 8px solid #000;
+			&.active{
+				padding: $marginSmall $marginNormal;
+				border-bottom-width: 8px ;
+			}
+			li{
+				padding: 0px $marginSmall;
+			}
+		}
+		.desktop-menu{
+			padding: 0;
+		}
+	}
+}

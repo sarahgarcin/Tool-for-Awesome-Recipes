@@ -1,0 +1,18 @@
+// -------------- MOBILE-FIRST ARTCLE --------------
+
+.sidebar-left{
+	border-bottom: 8px solid #000;
+	li{
+		margin: 0; 
+		padding: 0; 
+	}
+}
+
+// -------------- DESKTOP ARTICLE --------------
+@media only screen and (min-width: 64em){
+
+	.sidebar-left{
+		border-right: 8px solid #000;
+	}
+
+}
