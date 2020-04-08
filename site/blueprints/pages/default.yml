@@ -4,6 +4,7 @@ pages: false
 options: 
   changeTemplate: 
     - elementmenu
+    - list
 fields:
   text:
     label: Texte
@@ -16,4 +17,8 @@ fields:
       note: 
         label: note
         type: markdown
+  related: 
+    label: Pages liés 
+    type: pages
+    query: site.children.listed
 

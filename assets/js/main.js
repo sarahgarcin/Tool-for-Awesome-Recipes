@@ -1,41 +1,49 @@
-console.log("JS works.");
-
-// -------------- OPEN MENU MOBILE --------------- //
-var menuBtn = document.querySelector('.mobile-menu_btn');
-var nav = document.querySelector('.nav');
-var barBurger1 = document.querySelector('span:nth-child(1)');
-var barBurger2 = document.querySelector('span:nth-child(2)');
-var barBurger3 = document.querySelector('span:nth-child(3)');
-
-menuBtn.addEventListener("click", function(e){
-  if(nav.classList.contains('active')){
-    nav.classList.remove("active");
-    barBurger1.classList.remove("rotate-top");
-    barBurger2.classList.remove("transparent");
-    barBurger3.classList.remove("rotate-bottom");
-  }
-  else{
-  	nav.classList.add("active");
-    barBurger1.classList.add("rotate-top");
-    barBurger2.classList.add("transparent");
-    barBurger3.classList.add("rotate-bottom");
-  }
-
+$(document).ready(function(){
+	init();
 });
 
-// -------------- OPEN SUBMENU MOBILE --------------- //
-var menuEl = document.querySelector('.main-nav_first-level li');
-var submenu = document.querySelector('.main-nav_submenu');
 
-menuEl.addEventListener("click", function(e){
-  if(submenu.classList.contains('active')){
-    submenu.classList.remove("active");
-  }
-  else{
-  	submenu.classList.add("active");
-  }
+function init(){
 
-});
+	// -------------- OPEN MENU MOBILE --------------- //
+	var menuBtn = document.querySelector('.mobile-menu_btn');
+	var nav = $('.nav');
+	var barBurger1 = $('span:nth-child(1)');
+	var barBurger2 = $('span:nth-child(2)');
+	var barBurger3 = $('span:nth-child(3)');
+
+	$('.mobile-menu_btn').on("click", function(e){
+	  if(nav.hasClass('active')){
+	    nav.removeClass("active");
+	    barBurger1.removeClass("rotate-top");
+	    barBurger2.removeClass("transparent");
+	    barBurger3.removeClass("rotate-bottom");
+	  }
+	  else{
+	  	nav.addClass("active");
+	    barBurger1.addClass("rotate-top");
+	    barBurger2.addClass("transparent");
+	    barBurger3.addClass("rotate-bottom");
+	  }
+
+	});
+
+	// -------------- OPEN SUBMENU MOBILE --------------- //
+	var menuEl = document.querySelector('.main-nav_first-level li');
+
+	$('.main-nav_first-level li').on("click", function(e){
+		var submenu = $(this).find('.main-nav_submenu');
+	  if(submenu.hasClass('active')){
+	    submenu.removeClass("active");
+	  }
+	  else{
+	  	submenu.addClass("active");
+	  }
+
+	});
+
+}
+
 
 
 

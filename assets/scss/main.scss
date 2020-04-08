@@ -19,14 +19,11 @@ body{
 ul{margin:0; padding:0;}
 li{list-style:none;}
 a{color: #000;text-decoration: none;}
+a:visited{color: $red;}
 img {width: 100%;}
 figure{margin:0;}
-p{
-  font-size: $sizeText;
-}
-h1{
-  @include H1; 
-}
+p{font-size: $sizeText;}
+h1{@include H1; }
 
 // -------------- IMPORT TEMPlATES STYLES --------------
 @import "header.scss";
@@ -48,6 +45,7 @@ main, main.row{
   padding-top: 61px;
   border: 8px solid #000; 
   margin: 0px;
+  min-height: 95vh;
 }
 
 .rouge{

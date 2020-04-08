@@ -22,6 +22,9 @@ a {
   color: #000;
   text-decoration: none; }
 
+a:visited {
+  color: #FF0000; }
+
 img {
   width: 100%; }
 
@@ -276,7 +279,8 @@ header {
 main, main.row {
   padding-top: 61px;
   border: 8px solid #000;
-  margin: 0px; }
+  margin: 0px;
+  min-height: 95vh; }
 
 .rouge {
   color: #FF0000; }
