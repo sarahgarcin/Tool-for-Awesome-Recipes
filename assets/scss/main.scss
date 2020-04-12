@@ -16,7 +16,7 @@ body{
 }
 
 // -------------- RESET.CSS --------------
-ul{margin:0; padding:0;}
+ul, ol{margin:0; padding:0;}
 li{list-style:none;}
 a{color: #000;text-decoration: none;}
 a:visited{color: $red;}
@@ -29,6 +29,7 @@ h1{@include H1; }
 @import "header.scss";
 @import "home.scss";
 @import "article.scss";
+@import "list.scss";
 
 
 
@@ -52,6 +53,50 @@ main, main.row{
   color: $red; 
 }
 
+.breadcrumb{
+  background: #FFF; 
+  text-align: center; 
+  padding: $marginSmall;
+  font-size: $sizeMenu;
+  font-family: $fontTitle;
+  li{
+    display: inline-block; 
+    &:first-child:before{
+      content: "";
+    }
+    &:before{
+      content: ">";
+    }
+    a.active{
+      color: #000; 
+    }
+  }
+}
+
+.content{
+  padding: 0; 
+  article{
+    padding: $marginNormal $marginBig;
+    position: relative; 
+  }
+}
+
+.related{
+  border-top: 8px solid #000; 
+  li{
+    a{
+      color: $red;    
+      &:before{
+        content: "—";
+      }
+    }
+    font-size: $sizeSubmenu;
+    font-weight: bold;
+    margin-bottom: $marginSmall;
+
+  } 
+}
+
 // -------------- DESKTOP GENERAL --------------
 @media only screen and (min-width: 64em){
   body{
@@ -66,6 +111,23 @@ main, main.row{
   }
   main, main.row{
     padding-top: 95px;
+  }
+  .breadcrumb{
+    border-bottom: 8px solid #000; 
+  }
+  .related{
+    position: absolute;
+    right: -50%;
+    width: 48.7%;
+    bottom: 100px; 
+    background: #FFF;
+    padding: 0 $marginSmall $marginSmall;
+    border-bottom: 8px solid #000; 
+    a{
+      &:hover{
+        color: #000; 
+      }
+    }
   }
 }
 

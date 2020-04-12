@@ -22,5 +22,6 @@ $sizeH1: 37px;
 @mixin H1{
 	font-size: $sizeH1;
 	font-family: $fontTitle;
+	margin-top: 0px;
 } 
 

@@ -3,26 +3,21 @@
 
 	<main class="row">
 		<div class="sidebar-left col-xs-12 col-md-3">
-			<?php snippet('breadcrumb') ?>
-			<ul class="row">
-				<?php if($page->images()):?>
-					<?php foreach($page->images() as $image):?>
-						<li class="col-xs-4 col-md-12">
-							<?= $image->crop(300, 200, 'center');?>
-						</li>
-					<?php endforeach?>
-				<?php endif;?>
-			</ul>
+			<?php snippet("breadcrumb"); ?>
 		</div>
 		<div class="content col-xs-12 col-md-6">
-			<article>
-				<div class="date">
-					<?php if($page->datefield()->isNotEmpty()):
-						echo $page->datefield()->toDate('d/m/Y');
-					endif ?>
-				</div>
-				<?= $page->text()->kt()?>
-			</article>
+			<?php 
+
+			$events = $page->children()->listed()->filter(function ($child) {
+			  return $child->datefield()->toDate() > time() - (1 * 24 * 60 * 60);
+			});
+			$events = $events->sortBy(function ($page) {
+			  return $page->datefield()->toDate();
+			}, 'asc');
+			?>
+			<?php foreach($events as $child):?>
+				<?php snippet('listitem', ['child' => $child]);?>
+			<?php endforeach;?>
 		</div>
 		<div class="sidebar-right col-xs-12 col-md-3">
 			<ul class="row">

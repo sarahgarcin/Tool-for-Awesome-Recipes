@@ -3,17 +3,11 @@
 
 	<main class="row">
 		<div class="sidebar-left col-xs-12 col-md-3">
-			<div class="breadcrumb">
-				<a href="<?= $page->parent()->url()?>" title="<?= $page->parent()->title()?>"><?= $page->parent()->title()?></a>
-				 > <?= $page->title()?>
-			</div>
+			<?php snippet('breadcrumb') ?>
 		</div>
 		<div class="content col-xs-12 col-md-6">
 			<?php foreach($page->children()->listed() as $child):?>
-				<article>
-					<h1><?= $child->title()->html()?></h1>
-					<?= $child->text()->kt()?>
-				</article>
+				<?php snippet('listitem', ['child' => $child]);?>
 			<?php endforeach;?>
 		</div>
 		<div class="sidebar-right col-xs-12 col-md-3">

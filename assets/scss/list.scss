@@ -1,0 +1,54 @@
+// -------------- MOBILE-FIRST ARTCLE --------------
+
+// body[data-template="list"]{
+	.content{
+		article.list-item{
+			border-bottom: 8px solid #000; 
+			h1{
+				margin-top: 90px;
+			}
+		}
+	}
+	.sidebar-left{
+	  padding: 0; 
+	}
+	.image-gallery{
+		position: absolute;
+		top: 0; 
+		left: 0;
+		right: 0;
+		border-bottom: 8px solid #000;
+		background: $red; 
+		&.row{
+			margin: 0; 
+		}
+		li{
+			border-right: 8px solid #000; 
+			padding:0; 	
+		}
+	}
+// }
+
+// -------------- DESKTOP ARTICLE --------------
+@media only screen and (min-width: 64em){
+	// body[data-template="list"]{
+		.content{
+			article.list-item{ 
+				h1{
+					margin-top: 0px;
+				}
+			}
+		}
+		.image-gallery{
+			left: -50%;
+			width: 50%;
+			top:50px;
+			border-bottom: none;
+			li{
+				border-top: 8px solid #000;
+				border-bottom: 8px solid #000;
+			}
+		}
+	// }
+
+}

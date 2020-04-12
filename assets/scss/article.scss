@@ -2,12 +2,14 @@
 
 .sidebar-left{
 	border-bottom: 8px solid #000;
-	li{
-		margin: 0; 
-		padding: 0; 
-		border-right: 8px solid #000; 
-		&:nth-child(3n) {
-			border-right: none;
+	.image-gallery{
+		li{
+			margin: 0; 
+			padding: 0; 
+			border-right: 8px solid #000; 
+			&:nth-child(3n) {
+				border-right: none;
+			}
 		}
 	}
 }
@@ -30,16 +32,17 @@
 	.sidebar-left{
 		border-right: 8px solid #000;
 		background: $red;
-		li{
-			border-right: none;
-			border-bottom: 8px solid #000; 
+		.image-gallery{
+			li{
+				border-right: none;
+				border-bottom: 8px solid #000; 
+			}
 		}
 	}
 
 	.sidebar-right{
 		border-left: 8px solid #000;
 		border-top: 0; 
-
 	}
 
 }

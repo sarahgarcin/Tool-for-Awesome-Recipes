@@ -1,0 +1,31 @@
+title: Agenda 
+# preset: pages
+# drafts:
+#   template: event
+  
+
+
+sections:
+
+  drafts:
+    headline: Brouillons
+    type: pages
+    status: draft
+    templates: event
+    info: "{{ page.datefield.toDate('d/m/Y') }}"
+
+  unlisted:
+    headline: Non listés
+    type: pages
+    status: unlisted
+    templates: event
+    info: "{{ page.datefield.toDate('d/m/Y') }}"
+
+
+  published:
+    headline: Publiés
+    type: pages
+    status: listed
+    templates: event
+    info: "{{ page.datefield.toDate('d/m/Y') }}"
+

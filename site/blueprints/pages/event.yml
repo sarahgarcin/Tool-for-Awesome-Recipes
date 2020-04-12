@@ -1,17 +1,20 @@
-title: Article
+title: Évènement / date
 preset: page
 pages: false
+
 options: 
   changeTemplate: 
     - elementmenu
     - list
-    - events
-    - event
+
 fields:
   text:
     label: Texte
     type: markdown
     size: medium
+  datefield: 
+    label: Date
+    type: date
   notes: 
     label: Notes
     type: structure
