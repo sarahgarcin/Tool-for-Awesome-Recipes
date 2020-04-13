@@ -47,6 +47,9 @@ main, main.row{
   border: 8px solid #000; 
   margin: 0px;
   min-height: 95vh;
+  background: $red; 
+  // max-width: 1200px;
+  // margin:auto;
 }
 
 .rouge{
@@ -75,6 +78,7 @@ main, main.row{
 
 .content{
   padding: 0; 
+  background: #FFF; 
   article{
     padding: $marginNormal $marginBig;
     position: relative; 

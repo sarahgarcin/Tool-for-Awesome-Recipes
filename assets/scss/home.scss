@@ -1,42 +1,196 @@
 // -------------- HOME --------------
+
+// --------- TEST DE CSS GRID ------------------
+// .grid-item{
+// 	border: 7px solid #000; 
+// 	min-width: 10%;
+// 	min-height: 200px;
+// }
+
+// .home-grid-wrapper {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(6%, 1fr));
+//     grid-gap: 0px;
+//     grid-auto-rows: minmax(6%, auto);
+//     grid-auto-flow: dense;
+// }
+
+// .span-2 {
+//     grid-column-end: span 2;
+// }
+
+// .span-3 {
+//     grid-column-end: span 3;
+// }
+
+// .span-4 {
+//     grid-column-end: span 4;
+// }
+
+// .span-5 {
+//     grid-column-end: span 5;
+// }
+
+// .span-6 {
+//     grid-column-end: span 6;
+// }
+
+// .span-7 {
+//     grid-column-end: span 7;
+// }
+
+// .grid-item.agenda, .grid-item.image, .grid-item.actu-small{
+// 	grid-row-end: span 2;
+// }
+
+// --------- FIN TEST DE CSS GRID ------------------
+
 .grid-item{
-	border: 7px solid #000; 
-	min-width: 10%;
-	min-height: 160px;
+  width: 100%;
+  border: 4px solid #000;
+  min-height: 100px;
+  padding: $marginNormal;
+  background: #FFF;
+  p{
+    margin: $marginSmall 0 ; 
+  }
+  h2{
+    font-size: $sizeSubmenu; 
+    color: $red;
+    margin: 0; 
+  }
+  h3{
+    color: $red;
+    margin: 0; 
+  }
+}
+.grid-item--width50{
+    width: 100%;
 }
 
-.home-grid-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(6%, 1fr));
-    grid-gap: 0px;
-    grid-auto-rows: minmax(6%, auto);
-    grid-auto-flow: dense;
+.grid-item--width30{
+  width: 100%;
 }
 
-.span-2 {
-    grid-column-end: span 2;
+.grid-item--width20{
+    width: 100%;
 }
 
-.span-3 {
-    grid-column-end: span 3;
+.grid-item--width15{
+  width: 50%;
 }
 
-.span-4 {
-    grid-column-end: span 4;
+.grid-item--width10{
+    width: 50%;
 }
 
-.span-5 {
-    grid-column-end: span 5;
+.actu{
+  min-height: 253px;
 }
 
-.span-6 {
-    grid-column-end: span 6;
+.agenda{
+   min-height: 300px;
 }
 
-.span-7 {
-    grid-column-end: span 7;
+.cover-wrapper{
+  width: 100%;
+  height: 100%;
 }
 
-.grid-item.agenda, .grid-item.image, .grid-item.actu-small{
-	grid-row-end: span 2;
+.actu{
+  padding:0;
+  .cover-wrapper{position:absolute;z-index:0;}
+  h2, .date{position: absolute; z-index: 2; }
 }
+
+.presentation{
+  h1{
+    margin-bottom:0;
+  }
+  p{
+    color: #000; 
+    strong{font-weight: normal;}
+  }
+}
+
+.image{
+  padding: 0; 
+}
+
+.info, .actu-small{
+  padding-top: $marginSmall; 
+  padding-bottom: $marginSmall; 
+  min-height: 120px;
+  p{
+    font-size: $sizeSmall;
+    margin: 8px 0; 
+  }
+}
+
+.info{
+  height: 120px;
+}
+
+.quote{
+  padding-top: 0; 
+  padding-bottom: 0; 
+  min-height: 120px;
+}
+
+.contact, .liens, .guide{
+  text-align: center; 
+  height: 120px;
+  padding-top: 0; 
+  padding-bottom: 0; 
+  a{
+    @include center;
+    font-family: $fontTitle;
+    color: $red; 
+    font-size: $sizeH1; 
+  }
+}
+
+.newsletter{
+  padding-top: 0; 
+  padding-bottom: 0; 
+}
+
+.adhesion{
+  text-align: center; 
+  height: 150px;
+}
+
+.publications{
+  height: 193px;
+}
+
+@media only screen and (min-width: 64em){
+  .grid-item{
+    width: 27.5%;
+  }
+  .grid-item--width50{
+    width: 45%;
+  }
+
+  .grid-item--width30{
+    width: 42.5%;
+  }
+
+  .grid-item--width20{
+      width: 20%;
+  }
+
+  .grid-item--width15{
+    width: 17.5%;
+  }
+
+  .grid-item--width10{
+      width: 15%;
+  }
+}
+
+
+
+
+
+

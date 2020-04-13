@@ -2,7 +2,7 @@
 
   <!-- scripts -->
   <?php
-    echo js('assets/js/jquery-3.4.min.js');
+
     if ( option('environment') == 'local' ) :
       foreach ( option('julien-gargot.assets.scripts', array()) as $style):
         echo js($style.'?version='.md5(uniqid(rand(), true)));

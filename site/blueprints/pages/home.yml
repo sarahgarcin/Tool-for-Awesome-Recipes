@@ -6,11 +6,13 @@ fields:
   actu1: 
     label: Actu en image 
     type: pages
+    multiple: false
     query: site.find('agenda').children
     help: Cette actualité s'affichera dans la premère case
   actu2: 
     label: Actu en texte 
     type: pages
+    multiple: false
     query: site.find('agenda').children
     help: Cette actualité s'affichera dans une case sur la dernière ligne
   quote:
@@ -19,6 +21,21 @@ fields:
   info: 
     label: Informations
     type: markdown
+  lien1: 
+    label: Lien vers une page à mettre en avant
+    type: pages
+    multiple: false
+    query: site
+  lien2: 
+    label: Lien vers une page à mettre en avant
+    type: pages
+    multiple: false
+    query: site
+  lien3: 
+    label: Lien vers une page à mettre en avant
+    type: pages
+    multiple: false
+    query: site
   cover: 
     label: Image 
     type: files

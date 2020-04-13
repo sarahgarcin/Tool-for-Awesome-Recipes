@@ -11,8 +11,7 @@ User settings for GUlp
  */
 module.exports.pluginScripts = [
   'node_modules/jquery/dist/jquery.js',
-  'node_modules/popper.js/dist/umd/popper.js',
-  'node_modules/bootstrap/dist/js/bootstrap.js'
+  'assets/js/packery.pkgd.min.js'
 ];
 
 /* List all the Styles plugin files you are using in `pluginStyles`

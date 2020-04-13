@@ -42,6 +42,15 @@ function init(){
 
 	});
 
+	// -------------- HOME --------------- //
+
+	// ----- GRID LAYOUT ----- 
+	$('.home-grid-wrapper').packery({
+	  // options
+	  itemSelector: '.grid-item',
+	  gutter: 0
+	});
+
 }
 
 
