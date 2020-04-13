@@ -1,0 +1,27 @@
+title: Accueil
+preset: page
+pages: false
+
+fields:
+  actu1: 
+    label: Actu en image 
+    type: pages
+    query: site.find('agenda').children
+    help: Cette actualité s'affichera dans la premère case
+  actu2: 
+    label: Actu en texte 
+    type: pages
+    query: site.find('agenda').children
+    help: Cette actualité s'affichera dans une case sur la dernière ligne
+  quote:
+    label: Citation 
+    type: markdown
+  info: 
+    label: Informations
+    type: markdown
+  cover: 
+    label: Image 
+    type: files
+    multiple: false
+
+
