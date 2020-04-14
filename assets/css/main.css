@@ -390,6 +390,20 @@ header {
       border-top: 8px solid #000;
       border-bottom: 8px solid #000; } }
 
+.archives .year {
+  color: #FF0000;
+  font-size: 37px;
+  margin: 0;
+  padding: 2px 10px;
+  border-bottom: 8px solid #000;
+  width: 200%;
+  position: absolute;
+  width: 68.2%;
+  background: #FFF; }
+
+.archives > ul {
+  padding-top: 60px; }
+
 .show-for-small-only {
   display: block; }
 
