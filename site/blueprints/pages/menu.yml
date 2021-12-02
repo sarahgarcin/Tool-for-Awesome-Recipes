@@ -1,0 +1,20 @@
+title: Menu
+preset: page
+pages: false
+
+fields:
+  entrees:
+    label: Entrées
+    type : relationship
+    options: query
+    query : kirby.collection("recettes")
+  plats:
+    label: Plats
+    type : relationship
+    options: query
+    query : kirby.collection("recettes")
+  desserts:
+    label: Desserts
+    type : relationship
+    options: query
+    query : kirby.collection("recettes")

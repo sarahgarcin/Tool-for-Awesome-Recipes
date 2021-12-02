@@ -1,26 +1,10 @@
 title: Article
 preset: page
 pages: false
-options: 
-  changeTemplate: 
-    - elementmenu
-    - list
-    - events
-    - event
+
 fields:
   text:
     label: Texte
     type: markdown
     size: medium
-  notes: 
-    label: Notes
-    type: structure
-    fields: 
-      note: 
-        label: note
-        type: markdown
-  related: 
-    label: Pages liés 
-    type: pages
-    query: site.children.listed
 

@@ -1,0 +1,98 @@
+title: Recette
+preset: page
+pages: false
+
+fields:
+  cover: 
+    label: Image de couverture
+    type: files
+    multiple: false
+  portion:
+    label: Nombre de portions
+    type: number
+    width: 1/2
+  price: 
+    label: Prix
+    type: number
+    width: 1/2
+  prepa: 
+    label: Temps de préparation
+    type: text
+    width: 1/2
+  cuisson: 
+    label: Temps de cuisson
+    type: text
+    width: 1/2
+  tags: 
+    label: Tags
+    type: tags
+  builder:
+    label: Recette
+    type: builder
+    fieldsets:
+      first: 
+        name : Ingrédients
+        fields: 
+          title: 
+            label: Titre de la section
+            type: text
+          ingredients: 
+            label: Ingrédients
+            type: structure
+            fields: 
+              ingredient: 
+                label: Ingrédient
+                type: text
+                width: 1/2
+              unite: 
+                label: Unité
+                type: text
+                width: 1/4
+              quantite: 
+                label: Quantité
+                type: number
+                step: .01
+                width: 1/4
+      test: 
+        name : Test
+        fields: 
+          title: 
+            label: Titre de la section
+            type: text
+          ingredients: 
+            label: Ingrédients
+            type: structure
+            fields:
+              ingredient: 
+                label: Ingrédient
+                type: select
+                options: query
+                query:
+                  fetch: site.children.findBy('uid', 'liste-des-ingredients').ingredients.toStructure
+                  text: "{{ structureItem.ingredient }} [{{ structureItem.unite }}]"
+                  value: "{{ structureItem.ingredient }}"
+                width: 1/2
+              quantite: 
+                label: Quantité
+                type: number
+                step: .01
+                width: 1/4
+      recipe: 
+        name: Déroulé
+        fields:   
+          deroule: 
+            label: Déroulé de la recette
+            type: textarea
+      images: 
+        name: Images
+        fields: 
+          thumbs: 
+            label: Sélectionner une ou des images
+            type: files
+            multiple: true
+      comments: 
+        name: Commentaires
+        fields: 
+          comment: 
+            label: Commentaires
+            type: textarea

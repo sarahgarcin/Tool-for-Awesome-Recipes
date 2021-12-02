@@ -24,5 +24,4 @@
 		</ul>
 
 	</nav>
-	<?php snippet('searchbar')?>
 </div>

@@ -1,0 +1,6 @@
+title: Commandes
+preset: pages
+pages : true
+drafts: 
+  template: commande
+

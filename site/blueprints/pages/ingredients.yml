@@ -1,0 +1,54 @@
+title: Ingredients
+preset: page
+pages: false
+
+fields:
+  ingredients: 
+    label: Ingrédients
+    type: structure
+    sortBy: ingredient asc
+    fields:
+      rayon: 
+        label: Rayon
+        type : text
+        width: 1/2
+      ingredient: 
+        label: Ingrédient
+        type: text
+        width: 1/2
+      unite: 
+        label: Unité
+        type: text
+        width: 1/4
+      prix: 
+        label: Prix unitaire HT
+        type: number
+        step: .01
+        width: 1/4
+      allergene: 
+        label: Allergènes
+        type: checkboxes
+        sort: asc
+        width: 1/2
+        options:
+          - arachides 
+          - gluten
+          - crustacés
+          - poissons
+          - lait
+          - oeufs
+          - fruits à coques
+          - soja
+          - céleri
+          - moutarde
+          - graines de sésame
+          - sulfites
+          - lupin
+          - mollusques
+
+
+
+
+
+
+

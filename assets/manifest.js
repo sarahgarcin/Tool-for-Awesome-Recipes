@@ -11,14 +11,13 @@ User settings for GUlp
  */
 module.exports.pluginScripts = [
   'node_modules/jquery/dist/jquery.js',
-  'assets/js/packery.pkgd.min.js'
 ];
 
 /* List all the Styles plugin files you are using in `pluginStyles`
  * to define their loading order.
  */
 module.exports.pluginStyles = [
-  'node_modules/font-awesome/css/font-awesome.css'
+
 ];
 
 /* List all your JavaScript file in `userScripts` to define

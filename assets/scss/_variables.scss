@@ -1,31 +1,20 @@
-@import "../fonts/stylesheet.css";
+// @import "../fonts/stylesheet.css";
 
 
 // Margin variables
-$marginSmall: 10px; 
-$marginNormal: 20px;
-$marginBig: 30px; 
+$marginNormal: 20px;  
+$marginBig: $marginNormal *2;  
+$marginSmall: $marginNormal/2;
 
 // Colors
-$red : #FF0000; 
+$mainColor: black; 
 
 // Fonts
-$fontText : "Verdana", sans-serif;
-$fontTitle: "Block Berthold", sans-serif;
+
 
 // FontSize
-$sizeMenu: 25px;
-$sizeSubmenu: 18px;
-$sizeText: 15px;
-$sizeH1: 37px; 
-$sizeSmall: 12px; 
-
-@mixin H1{
-	font-size: $sizeH1;
-	font-family: $fontTitle;
-	margin-top: 0px;
-} 
-
+ 
+// Mixins
 @mixin center{
 	display: block;
 	position: relative; 

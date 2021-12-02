@@ -1,54 +1,52 @@
+var totalPrice = 0;
+
 $(document).ready(function(){
 	init();
 });
 
-
 function init(){
 
-	// -------------- OPEN MENU MOBILE --------------- //
-	var menuBtn = document.querySelector('.mobile-menu_btn');
-	var nav = $('.nav');
-	var barBurger1 = $('span:nth-child(1)');
-	var barBurger2 = $('span:nth-child(2)');
-	var barBurger3 = $('span:nth-child(3)');
-
-	$('.mobile-menu_btn').on("click", function(e){
-	  if(nav.hasClass('active')){
-	    nav.removeClass("active");
-	    barBurger1.removeClass("rotate-top");
-	    barBurger2.removeClass("transparent");
-	    barBurger3.removeClass("rotate-bottom");
-	  }
-	  else{
-	  	nav.addClass("active");
-	    barBurger1.addClass("rotate-top");
-	    barBurger2.addClass("transparent");
-	    barBurger3.addClass("rotate-bottom");
-	  }
-
+	// Calculer le prix en fonction du prix des ingrédients
+	$('.ingPrice').each(function(){
+		$this = $(this).html();
+		console.log($this);
+		if($this != ""){
+			var ingPrice = parseFloat($this);
+		}
+		else{
+			var ingPrice = 0;
+		}
+		totalPrice += ingPrice;
 	});
+	console.log(totalPrice);
+	console.log(Math.round(totalPrice * 100) / 100);
+	totalPrice = Math.round(totalPrice * 100) / 100;
+	$('#price').html("Prix: " + totalPrice + '€');
 
-	// -------------- OPEN SUBMENU MOBILE --------------- //
-	var menuEl = document.querySelector('.main-nav_first-level li');
+	// dans les recettes, changer le nombre de portions
+	var oldPortion = $("#portion").val();
+	$('.changeportion').on('click', function(){
+		// console.log('test');
+		var portion = $("#portion").val();
+		console.log('portion: ', portion);
+		$('.quantite').each(function(){
+			var quantite = parseFloat($(this).html());
+			if(!isNaN(quantite)){
+				var newQuantite = (portion * parseFloat($(this).html())) / oldPortion;
+				$(this).html(newQuantite.toFixed(2));
+			}
+		});	
+		// changer le prix
+		// il y a un bug dans le calcul des prix -> si je passe de 6 à 10 = ok mais si je passe à 1 quand je repasse à 6, ça fait un mauvais calcul… 
+		// var price = parseFloat($("#prix").html());
+		if(!isNaN(totalPrice)){
+			var newPrice = (portion * totalPrice) / oldPortion;
+			console.log(newPrice);
+			// $("#prix").html(newPrice.toFixed(2));
+			$("#price").html("Prix: " + newPrice.toFixed(2) + '€');
+		}
 
-	$('.main-nav_first-level li').on("click", function(e){
-		var submenu = $(this).find('.main-nav_submenu');
-	  if(submenu.hasClass('active')){
-	    submenu.removeClass("active");
-	  }
-	  else{
-	  	submenu.addClass("active");
-	  }
-
-	});
-
-	// -------------- HOME --------------- //
-
-	// ----- GRID LAYOUT ----- 
-	$('.home-grid-wrapper').packery({
-	  // options
-	  itemSelector: '.grid-item',
-	  gutter: 0
+		oldPortion = $("#portion").val();
 	});
 
 }

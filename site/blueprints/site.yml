@@ -29,10 +29,6 @@ tabs:
             label: Logo du site
             type: files
             multiple: false
-          smalllogo: 
-            label: Petit logo
-            type: files
-            multiple: false
           author: 
             label: Auteur
             type: text

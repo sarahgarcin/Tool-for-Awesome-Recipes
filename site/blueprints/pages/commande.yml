@@ -1,0 +1,29 @@
+title: Commande
+preset: page
+pages: false
+
+fields:
+  commandes:
+    label: À commander
+    type : relationship
+    options: query
+    query : kirby.collection("recettes")
+  specifiques: 
+    label: Ajouts spécifiques
+    type: structure
+    fields:
+      ingredient: 
+        label: Ingrédient
+        type: select
+        options: query
+        query:
+          fetch: site.children.findBy('uid', 'liste-des-ingredients').ingredients.toStructure
+          text: "{{ structureItem.ingredient }} [{{ structureItem.unite }}]"
+          value: "{{ structureItem.ingredient }}"
+        width: 1/2
+      quantite: 
+        label: Quantité
+        type: number
+        step: .01
+        width: 1/4
+

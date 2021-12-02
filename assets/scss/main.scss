@@ -1,141 +1,235 @@
 // I M P O R T
 // -------------- MOBILE-FIRST --------------
 @import "_variables.scss";
+@import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
 
 *{
   box-sizing: border-box;
-	-webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	// -webkit-font-smoothing: antialiased;
+ //  -moz-osx-font-smoothing: grayscale;
 }
 
 body{
-	margin: 0 0px; 
-  font-size: 12px; 
-  font-family: $fontText;
-  background: #FFF;
+  font-size: 12px;
+  font-family: 'Work Sans', sans-serif;
+  margin: 0;
+  margin-bottom: 60em;
+  background: #f0f0f0;
+  line-height: 1.2;
+}
+
+main{
+  margin-top: 60px;
+  padding: 0 2.5em;
 }
 
 // -------------- RESET.CSS --------------
 ul, ol{margin:0; padding:0;}
 li{list-style:none;}
 a{color: #000;text-decoration: none;}
-a:visited{color: $red;}
+a:visited{color: #000;}
 img {width: 100%;}
 figure{margin:0;}
-p{font-size: $sizeText;}
-h1{@include H1; }
 
-// -------------- IMPORT TEMPlATES STYLES --------------
-@import "header.scss";
-@import "home.scss";
-@import "article.scss";
-@import "list.scss";
-@import "archives.scss";
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
 
-
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
 
 // -------------- MOBILE-FIRST GENERAL --------------
-.show-for-small-only{
-	display:block;
+header {
+  border-bottom: 1px solid #000;
+  h1{
+    text-align: center;
+  }
 }
 
-.hide-for-small-only{
-	display:none;
+.box{
+  border: 1px solid #000; 
+  padding: 20px;
+  position: relative; 
+  top: -2px;
+  // &:nth-child(2){
+  //   left: -1px;
+  // }
+  h2{
+    text-align: center;
+  }
 }
 
-main, main.row{
-  padding-top: 61px;
-  border: 8px solid #000; 
-  margin: 0px;
-  min-height: 95vh;
-  background: $red; 
-  // max-width: 1200px;
-  // margin:auto;
-}
-
-.rouge{
-  color: $red; 
-}
-
-.breadcrumb{
-  background: #FFF; 
-  text-align: center; 
-  padding: $marginSmall;
-  font-size: $sizeMenu;
-  font-family: $fontTitle;
-  li{
-    display: inline-block; 
-    &:first-child:before{
-      content: "";
-    }
-    &:before{
-      content: ">";
-    }
-    a.active{
-      color: #000; 
+.article-meta{
+  text-align: center;
+  .tag{
+    &:after{
+      content: "/";
+      margin-left: 5px;
     }
   }
 }
 
-.content{
-  padding: 0; 
-  background: #FFF; 
-  article{
-    padding: $marginNormal $marginBig;
-    position: relative; 
+.recette{
+  h1{
+    font-family: "YoungSerif";
+    font-size: 5em;
+    margin:auto;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding: 10px;
+    max-width: 80%;
+    text-align: center;
   }
-}
-
-.related{
-  border-top: 8px solid #000; 
-  li{
-    a{
-      color: $red;    
-      &:before{
-        content: "—";
+  h2{
+    text-transform: uppercase;
+    font-size: 1.2em;
+  }
+  li{ font-size: 1rem;}
+  .meta-recipe{
+    margin-top: 50px;
+    div{
+      text-align: center;
+      h2{
+        margin: 5px;
+      }
+      p{
+        margin:0;
+        font-size: 1.1em;
+      }
+      &.tags{
+        text-transform: uppercase;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-top: 60px;
+        a{
+          &:hover{font-style: italic;}
+          .tag:after{
+            content: ","
+          }
+          &:last-child{
+            .tag:after{
+              content: ""
+            }
+          }
+        }
       }
     }
-    font-size: $sizeSubmenu;
-    font-weight: bold;
-    margin-bottom: $marginSmall;
-
-  } 
-}
-
-// -------------- DESKTOP GENERAL --------------
-@media only screen and (min-width: 64em){
-  body{
-    margin: 0 50px; 
   }
 
-  .show-for-small-only{
-      display:none !important;
+  .changeportion{
+    display: inline-block;
+    border: 1px solid #000; 
+    margin-left: 10px;
+    padding: 3px 5px;
+    cursor: pointer;
   }
-  .hide-for-small-only{
-      display:block !important;
+  .portion{
+    width: 250px;
+    margin: auto;
+    padding-top: 0;
   }
-  main, main.row{
-    padding-top: 95px;
+
+  .ingredients{
+    li{font-size: 0.9rem; list-style: disc; margin-bottom: 5px;}
+    ul{ padding-left: 15px;}
+    border-bottom: 1px solid #000;
+    padding-bottom: 20px;
+    width: 25%;
+    // position: fixed;
   }
-  .breadcrumb{
-    border-bottom: 8px solid #000; 
-  }
-  .related{
-    position: absolute;
-    right: -50%;
-    width: 48.7%;
-    bottom: 100px; 
+  .comments{
+    border: 1px solid #000; 
+    padding: 5px 10px;
+    margin-top: 20px;
     background: #FFF;
-    padding: 0 $marginSmall $marginSmall;
-    border-bottom: 8px solid #000; 
-    a{
-      &:hover{
-        color: #000; 
+    width: 25%;
+    p, li{font-size: 0.8rem;}
+    li{list-style: disc; margin-bottom: 5px;}
+    ul{ padding-left: 15px;}
+
+  }
+  .article-text{position: relative;}
+  .deroule{
+    margin-bottom: 40px;
+    width: 70%;
+    margin-left: 30%;
+    position: absolute;
+    top: 0em;
+    ol, ul{
+      padding:0;
+      li{
+        // list-style: number;
+         margin-bottom: 20px;
       }
     }
   }
 }
 
+.screen{
+  display: block;
+}
+.print{
+  display: none;
+}
+
+@media screen{
+  .recette h1{
+    margin-bottom: 3rem;
+  }
+  .recette .portion{
+    margin:0;
+  }
+  .deroule{
+    max-width: 50%;
+  }
+}
+
+@media print{
+  .screen{
+    display: none !important;
+  }
+  .print{
+    display: block;
+  }
+
+  @page{
+    size: A4;
+    margin: 1cm; 
+  }
+  body{
+    background: transparent;
+  }
+  header{display:none !important}
+  header, .arrow-back{
+    display: none;
+  }
+  main{
+    margin-top: 0;
+  }
+
+  .article .box{border:none;}
+  input{border:none;}
+  .recette .portion{
+    padding-left: 56px;
+    span, input{
+      display: inline-block;
+      font-weight: bold;
+      font-size: 1.2em;
+
+    }
+    input{ width: 30px;}
+    span{
+      text-transform: uppercase; 
+    }
+  }
+  .recette .meta-recipe{
+    margin-top: 0;
+  }
+}
 
 
 

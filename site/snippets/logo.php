@@ -2,7 +2,7 @@
 <div class="mobile-menu show-for-small-only">
 	<div class="mobile-menu_logo">
 		<a href="<?= $site->url()?>" title="<?= $site->title()?>">
-			<?php if($image = $site->smalllogo()->toFile()): ?>
+			<?php if($image = $site->logo()->toFile()): ?>
 			<img src="<?= $image->url()?>" alt="<?= $image->alt()?>">
 		<?php endif;?>
 		</a>
@@ -15,7 +15,7 @@
 </div>
 
 <!-- DESKTOP LOGO -->
-<div class="desktop-menu hide-for-small-only col-md-4">
+<div class="desktop-menu hide-for-small-only col-md-2">
 	<div class="desktop-menu_logo">
 		<a href="<?= $site->url()?>" title="<?= $site->title()?>">
 			<?php if($image = $site->logo()->toFile()): ?>

@@ -1,0 +1,6 @@
+title: Menus
+preset: pages
+pages : true
+drafts: 
+  template: menu
+
